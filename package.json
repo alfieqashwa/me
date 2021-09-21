@@ -2,6 +2,10 @@
   "name": "next-ts-tw",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Alfie Qashwa",
+    "url": "https://github.com/alfieqashwa"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
