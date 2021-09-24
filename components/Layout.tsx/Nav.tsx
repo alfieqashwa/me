@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { ActiveLink } from './ActivLink'
+import { ActiveLink } from './ActiveLink'
 
 const LOGO = 'LOGO'
 
