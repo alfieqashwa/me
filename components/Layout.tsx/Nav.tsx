@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import { ActiveLink } from './ActivLink'
 
 const LOGO = 'LOGO'
 
@@ -17,7 +18,7 @@ export const Nav: React.FC = (): JSX.Element => {
         {menus.map((menu) => (
           <li key={menu}>
             <h6 className='tracking-wider capitalize transition duration-300 ease-in-out hover:opacity-80'>
-              <Link href={`/${menu}`}>{menu}</Link>
+              <ActiveLink href={`/${menu}`}>{menu}</ActiveLink>
             </h6>
           </li>
         ))}
