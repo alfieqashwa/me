@@ -34,7 +34,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Futura PT Book', 'sans-serif'],
-        secondary: ['"Work Sans"', 'sans-serif'],
+        secondary: ['Futura PT Demi', 'sans-serif'],
       },
     },
   },

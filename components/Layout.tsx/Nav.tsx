@@ -16,7 +16,7 @@ export const Nav: React.FC = (): JSX.Element => {
       <ul className='flex items-center space-x-12'>
         {menus.map((menu) => (
           <li key={menu}>
-            <h6 className='font-extrabold tracking-wider capitalize transition duration-300 ease-in-out hover:opacity-80'>
+            <h6 className='tracking-wider capitalize transition duration-300 ease-in-out hover:opacity-80'>
               <Link href={`/${menu}`}>{menu}</Link>
             </h6>
           </li>
