@@ -3,14 +3,14 @@ import type { NextPage } from 'next'
 import Layout from 'components/Layout.tsx'
 import { ExampleComponent } from 'components/ExampleComponent'
 
-const Writings: NextPage = (): JSX.Element => {
+const Projects: NextPage = (): JSX.Element => {
   return (
     <Layout title='Writing'>
       <section className='grid min-h-screen place-items-center'>
-        <ExampleComponent title='writings' />
-        <article>Articles section</article>
+        <ExampleComponent title='projects' />
+        <article>Projects section</article>
       </section>
     </Layout>
   )
 }
-export default Writings
+export default Projects
