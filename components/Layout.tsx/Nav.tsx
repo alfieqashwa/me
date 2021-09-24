@@ -1,16 +1,21 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 export const Nav = () => {
-  let [menus] = useState<string[]>(['about', 'projects', 'articles', 'contact'])
+  let [menus] = useState<string[]>(['about', 'projects', 'writings', 'contact'])
   return (
     <nav className='flex justify-between px-16 z-10 pt-[60px]'>
-      <h1>Logo</h1>
+      <h4>
+        <Link href='/' passHref>
+          Logo
+        </Link>
+      </h4>
       <ul className='flex space-x-12'>
         {menus.map((menu) => (
           <li key={menu}>
-            <a className='text-lg font-extrabold tracking-wider capitalize'>
-              {menu}
-            </a>
+            <h6 className='font-extrabold tracking-wider capitalize transition duration-300 ease-in-out shadowr hover:opacity-80'>
+              <Link href={`/${menu}`}>{menu}</Link>
+            </h6>
           </li>
         ))}
       </ul>

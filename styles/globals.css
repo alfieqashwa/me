@@ -1,4 +1,46 @@
+/*
+! source:
+! https://dev.to/thelamina/using-custom-fonts-in-tailwind-css-5doi
+*/
 @import url('/fonts/stylesheet.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+    @apply text-white;
+  }
+  h1 {
+    @apply font-primary;
+    @apply text-5xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply font-primary;
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply font-primary;
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h4 {
+    @apply font-primary;
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h5 {
+    @apply font-primary;
+    @apply text-xl;
+    @apply font-bold;
+  }
+  h6 {
+    @apply font-primary;
+    @apply text-lg;
+    @apply font-bold;
+  }
+}
