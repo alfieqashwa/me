@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { motion, AnimateSharedLayout } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 type Props = {
   children: React.ReactNode
@@ -26,7 +26,7 @@ export const ActiveLink: React.FC<Props> = ({
       {router.asPath === href && (
         <motion.div
           layoutId='underline'
-          transition={{ type: 'spring', bounce: 0.3, duration: 0.7 }}
+          transition={{ type: 'spring', bounce: 0.4, duration: 0.7 }}
           className='w-5 mx-auto mt-0.5 border-t'
         />
       )}
