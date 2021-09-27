@@ -23,17 +23,17 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
 
   const toggledVariants = {
     close: {
-      y: -435,
+      y: -467,
       transition: {
         duration: 0.5,
         ease: 'easeInOut',
       },
     },
     open: {
-      y: 0,
+      y: -20,
       transition: {
         duration: 0.5,
-        stiffness: 0.5,
+        stiffness: 900,
         ease: 'easeInOut',
       },
     },
@@ -47,12 +47,12 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
         <Nav menus={menus} />
 
         {/* // * Start Mobile View */}
-        <div className='md:hidden'>
+        <div className='-pt-10 md:hidden'>
           <motion.section
             variants={toggledVariants}
             initial='close'
             animate={`${isToggled ? 'open' : 'close'}`}
-            className='z-20 bg-black shadow-lg md:hidden rounded-t-3xl'
+            className='z-20 bg-black shadow-lg rounded-t-3xl'
           >
             <div className='flex items-center px-16 justify-between pt-[60px]'>
               <Logo />

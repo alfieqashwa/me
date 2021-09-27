@@ -1,5 +1,3 @@
-import { MenuAlt4Icon } from '@heroicons/react/outline'
-import { motion } from 'framer-motion'
 import {
   AiOutlineTwitter,
   AiOutlineGithub,
@@ -26,7 +24,7 @@ export const MobileNav: React.FC<Props> = (props) => {
           </div>
         </section>
         <div className='w-10/12 mx-auto border-t border-gray-600' />
-        <ul className='py-12 space-y-8'>
+        <ul className='pt-12 pb-20 space-y-8'>
           {props.menus.map((menu) => (
             <li className='text-center capitalize' key={menu}>
               <h5 className='font-light tracking-wider'>
