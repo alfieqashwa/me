@@ -7,40 +7,16 @@ import {
 } from 'react-icons/ai'
 import { SiReverbnation } from 'react-icons/si'
 
-import { Logo } from './Logo'
 import { MobileActiveLink } from './MobileActiveLink'
 
 type Props = {
   menus: string[]
-  isToggled: boolean
-  setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const MobileNav: React.FC<Props> = (props) => {
-  const handleToggle = () => {
-    props.setIsToggled((prev) => !prev)
-  }
-
-  const toggledVariants = {
-    close: {
-      y: -435,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
-    },
-    open: {
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
-    },
-  }
-
   return (
-    <div className='md:hidden'>
-      <nav className='w-full  bg-[#1D2128]'>
+    <div className='z-0 w-full md:hidden'>
+      <nav className='w-full bg-[#1D2128]'>
         <section className='py-12'>
           <div className='flex items-center justify-center space-x-14'>
             <AiOutlineTwitter className='w-4 h-4' />
@@ -60,19 +36,6 @@ export const MobileNav: React.FC<Props> = (props) => {
           ))}
         </ul>
       </nav>
-      <motion.section
-        className='z-10 min-h-screen bg-black md:min-h-0 rounded-t-3xl'
-        variants={toggledVariants}
-        initial='close'
-        animate={`${props.isToggled ? 'open' : 'close'}`}
-      >
-        <div className='flex items-center px-16 z-10 justify-between pt-[60px]'>
-          <Logo />
-          <button onClick={handleToggle}>
-            <MenuAlt4Icon className='w-6 h-6' />
-          </button>
-        </div>
-      </motion.section>
     </div>
   )
 }
