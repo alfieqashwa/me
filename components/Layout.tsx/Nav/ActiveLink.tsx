@@ -6,13 +6,6 @@ type Props = {
   href: string
 }
 
-const spring = {
-  delay: 0.1,
-  type: 'spring',
-  stiffness: 400,
-  damping: 40,
-}
-
 export const ActiveLink: React.FC<Props> = ({
   children,
   href,
@@ -39,4 +32,11 @@ export const ActiveLink: React.FC<Props> = ({
       )}
     </>
   )
+}
+
+const spring = {
+  delay: 0.1,
+  type: 'spring',
+  stiffness: 400,
+  damping: 40,
 }

@@ -19,11 +19,18 @@ export const MobileActiveLink: React.FC<MobileProps> = ({
   }
   return (
     <a
-      className={`${router.asPath === href ? 'text-coolGray-500' : ''}`}
       href={href}
       onClick={handleClick}
+      className={`${router.asPath === href ? 'text-coolGray-500' : ''}`}
     >
       {children}
     </a>
   )
+}
+
+const spring = {
+  delay: 0.1,
+  type: 'spring',
+  stiffness: 400,
+  damping: 40,
 }
