@@ -8,7 +8,7 @@ import Footer from 'components/Layout.tsx/Footer'
 import { MobileNav } from './Nav/MobileNav'
 import { MobileLogo } from './Nav/Logo'
 
-import { MENULIST } from 'constants/MenuList'
+import { MENU_LIST } from 'constants/menu-list'
 
 type Props = {
   title?: string
@@ -50,11 +50,11 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
     <Fragment>
       <Header title={title} />
       <div className='relative w-full mx-auto max-w-7xl FuturaPT'>
-        <Nav menus={MENULIST} />
+        <Nav menus={MENU_LIST} />
 
         {/* // * Start Mobile View */}
         <div className='-pt-10 md:hidden'>
-          <MobileNav menus={MENULIST} isToggled={isToggled} />
+          <MobileNav menus={MENU_LIST} isToggled={isToggled} />
           <motion.section
             initial={false}
             animate={animation}
@@ -77,7 +77,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
         </div>
         {/* // * Ends Desktop View */}
 
-        <Footer menus={MENULIST} />
+        <Footer menus={MENU_LIST} />
       </div>
     </Fragment>
   )

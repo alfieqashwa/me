@@ -38,10 +38,34 @@ function Footer(props: Props): JSX.Element {
         ))}
       </ul>
       <section className='flex items-center justify-center space-x-14'>
-        <AiOutlineTwitter className='w-4 h-4 text-trueGray-500' />
-        <AiOutlineGithub className='w-4 h-4 text-trueGray-500' />
-        <AiOutlineInstagram className='w-4 h-4 text-trueGray-500' />
-        <SiReverbnation className='w-4 h-4 text-trueGray-500' />
+        <a
+          href='https://www.twitter.com/alfieqashwa'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <AiOutlineTwitter className='w-4 h-4 text-trueGray-500' />
+        </a>
+        <a
+          href='https://www.github.com/alfieqashwa'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <AiOutlineGithub className='w-4 h-4 text-trueGray-500' />
+        </a>
+        <a
+          href='https://www.instagram.com/alfieqashwa'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <AiOutlineInstagram className='w-4 h-4 text-trueGray-500' />
+        </a>
+        <a
+          href='https://www.reverbnation.com/tweleph'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <SiReverbnation className='w-4 h-4 text-trueGray-500' />
+        </a>
       </section>
       <p className='pt-16 pb-20 text-sm tracking-widest text-center text-trueGray-500'>
         © {new Date().getFullYear()} Alfie Qashwa

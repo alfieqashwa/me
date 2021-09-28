@@ -62,10 +62,34 @@ export const MobileNav: React.FC<Props> = (props) => {
           animate={animation}
           className='flex items-center justify-center space-x-14'
         >
-          <AiOutlineTwitter className='w-4 h-4' />
-          <AiOutlineGithub className='w-4 h-4' />
-          <AiOutlineInstagram className='w-4 h-4' />
-          <SiReverbnation className='w-4 h-4' />
+          <a
+            href='https://www.twitter.com/alfieqashwa'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <AiOutlineTwitter className='w-4 h-4' />
+          </a>
+          <a
+            href='https://www.github.com/alfieqashwa'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <AiOutlineGithub className='w-4 h-4' />
+          </a>
+          <a
+            href='https://www.instagram.com/alfieqashwa'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <AiOutlineInstagram className='w-4 h-4' />
+          </a>
+          <a
+            href='https://www.reverbnation.com/tweleph'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <SiReverbnation className='w-4 h-4' />
+          </a>
         </motion.div>
       </section>
       <motion.div
