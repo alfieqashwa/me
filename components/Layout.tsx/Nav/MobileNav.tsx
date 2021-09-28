@@ -42,7 +42,7 @@ export const MobileNav: React.FC<Props> = (props) => {
         translateY: -10,
         opacity: 0,
         transition: {
-          duration: 0.4,
+          duration: 0.2,
         },
       }),
         borderAnimation.start({
@@ -56,7 +56,7 @@ export const MobileNav: React.FC<Props> = (props) => {
   }, [props.isToggled, animation, borderAnimation])
 
   return (
-    <nav className='z-0 w-full bg-[#1D2128] md:hidden'>
+    <nav className='z-0 w-full bg-defaultColor md:hidden'>
       <section className='py-12'>
         <motion.div
           animate={animation}

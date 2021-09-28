@@ -36,6 +36,9 @@ module.exports = {
         primary: ['Futura PT Book', 'sans-serif'],
         secondary: ['Futura PT Demi', 'sans-serif'],
       },
+      colors: {
+        defaultColor: '#1D2128',
+      },
     },
   },
   variants: {
