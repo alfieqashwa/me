@@ -20,7 +20,7 @@ const ExampleComponent: React.FC<{ title: string }> = ({
         variants={headerVariant}
         initial='hidden'
         animate='visible'
-        className='p-2 font-extrabold text-transparent capitalize text-8xl bg-gradient-to-br via-coolGray-50 from-amber-900 bg-clip-text to-amber-800'
+        className='p-2 font-extrabold text-transparent capitalize text-7xl md:text-8xl bg-gradient-to-br via-coolGray-50 from-amber-900 bg-clip-text to-amber-800'
       >
         {title}
       </motion.h1>

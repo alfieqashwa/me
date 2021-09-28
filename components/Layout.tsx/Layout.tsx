@@ -23,20 +23,26 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
     setIsToggled(!isToggled)
   }
 
-  useEffect(() => {
-    if (!isToggled) {
-      animation.start({
-        translateY: -582,
-        transition: spring,
-      })
-    }
-    if (isToggled) {
-      animation.start({
-        translateY: -20,
-        transition: spring,
-      })
-    }
-  }, [isToggled, animation])
+  // useEffect(() => {
+  if (!isToggled) {
+    animation.start({
+      translateY: -452,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 70,
+        delay: 0.2,
+        duration: 0.5,
+      },
+    })
+  }
+  if (isToggled) {
+    animation.start({
+      translateY: -20,
+      transition: spring,
+    })
+  }
+  // }, [isToggled, animation])
 
   return (
     <Fragment>
@@ -52,7 +58,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
             className='z-20 bg-black border-t-[1px] border-trueGray-400 border-transparent shadow-lg bg-gradient-to-tr from-trueGray-800 via-trueGray-400 to-trueGray-700 rounded-t-3xl'
           >
             <div className='flex items-center px-16 justify-between pt-[60px]'>
-              <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
+              <MobileLogo isToggled={isToggled} />
               <button onClick={handleToggle}>
                 <MenuAlt4Icon className='w-6 h-6' />
               </button>
@@ -80,7 +86,7 @@ const spring = {
   type: 'spring',
   stiffness: 300,
   damping: 70,
-  delay: 0.15,
+  delay: 0.05,
   // stiffness: 900,
   // ease: 'easeInOut',
 }

@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply bg-black;
+    @apply bg-[#1D2128];
     @apply text-white;
   }
   h1 {
