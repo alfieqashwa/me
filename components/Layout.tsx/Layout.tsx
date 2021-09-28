@@ -26,7 +26,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
   useEffect(() => {
     if (!isToggled) {
       animation.start({
-        translateY: -467,
+        translateY: -582,
         transition: spring,
       })
     }
@@ -46,10 +46,10 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
 
         {/* // * Start Mobile View */}
         <div className='-pt-10 md:hidden'>
-          <MobileNav menus={menus} />
+          <MobileNav menus={menus} isToggled={isToggled} />
           <motion.section
             animate={animation}
-            className='z-20 bg-black shadow-lg rounded-t-3xl'
+            className='z-20 bg-black border-t-[1px] border-trueGray-400 border-transparent shadow-lg bg-gradient-to-tr from-trueGray-800 via-trueGray-400 to-trueGray-700 rounded-t-3xl'
           >
             <div className='flex items-center px-16 justify-between pt-[60px]'>
               <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
@@ -80,7 +80,7 @@ const spring = {
   type: 'spring',
   stiffness: 300,
   damping: 70,
-  // delay: 0.05,
+  delay: 0.15,
   // stiffness: 900,
   // ease: 'easeInOut',
 }

@@ -27,10 +27,3 @@ export const MobileActiveLink: React.FC<MobileProps> = ({
     </a>
   )
 }
-
-const spring = {
-  delay: 0.1,
-  type: 'spring',
-  stiffness: 400,
-  damping: 40,
-}
