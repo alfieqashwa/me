@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 
 import Layout from 'components/Layout.tsx'
-import { ExampleComponent } from 'components/ExampleComponent'
-import Hero from 'components/Hero'
+import Hero, { HeroWithQuote } from 'components/Hero'
 
 const Home: NextPage = (): JSX.Element => {
   return (
     <Layout>
-      <Hero />
+      <Hero title='Cello World!' description='Welcome to my personal blog'>
+        <HeroWithQuote quote='✨ Home is not a house ✨' />
+      </Hero>
     </Layout>
   )
 }
