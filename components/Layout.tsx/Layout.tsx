@@ -49,14 +49,15 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
   return (
     <Fragment>
       <Header title={title} />
-      <div className='relative w-full px-16 mx-auto max-w-7xl FuturaPT'>
+      <div className='relative w-full mx-auto md:px-16 max-w-7xl FuturaPT'>
         {/* // * Start Mobile View */}
+
         <div className='-pt-10 md:hidden'>
           <MobileNav menus={MENU_LIST} isToggled={isToggled} />
           <motion.section
             initial={false}
             animate={animation}
-            className='z-20 bg-black border-t-[1px] border-amber-100 border-transparent shadow-lg bg-gradient-to-tr from-trueGray-800 via-trueGray-400 to-trueGray-700 rounded-t-3xl'
+            className='z-20 bg-black pb-7 border-t-[1px] border-amber-100 border-transparent shadow-lg rounded-t-3xl'
           >
             <div className='flex items-center px-16 justify-between pt-[60px]'>
               <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
@@ -64,7 +65,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
                 <MenuAlt4Icon className='w-6 h-6' />
               </button>
             </div>
-            <main className='z-10'>{children}</main>
+            <main className='z-10 px-16'>{children}</main>
           </motion.section>
         </div>
         {/* // * Ends Mobile View */}

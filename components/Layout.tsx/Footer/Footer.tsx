@@ -71,7 +71,7 @@ function Footer(props: Props): JSX.Element {
             <SiReverbnation className='w-4 h-4 text-trueGray-500' />
           </a>
         </section>
-        <p className='pt-16 pb-20 text-sm tracking-widest text-center text-trueGray-500'>
+        <p className='pt-16 pb-20 text-sm tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-b via-white from-amber-100 to-amber-100'>
           © {new Date().getFullYear()} Alfie Qashwa
         </p>
       </footer>
