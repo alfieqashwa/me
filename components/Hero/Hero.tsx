@@ -8,7 +8,7 @@ type Props = {
 
 const Hero: React.FC<Props> = (props): JSX.Element => {
   return (
-    <div className='mx-auto mt-40 md-center md:justify-between md:flex md:py-60'>
+    <div className='mx-auto mt-40 md:mt-0 md-center md:justify-between md:flex md:py-60'>
       <section className='items-center space-y-4 flex-cols'>
         <motion.h1
           whileHover={{ scale: 1.05 }}
