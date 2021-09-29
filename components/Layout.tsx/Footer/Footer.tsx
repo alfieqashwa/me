@@ -23,7 +23,7 @@ function Footer(props: Props): JSX.Element {
         <ul className='pt-4 pb-16 space-y-12'>
           {props.menus.map((menu) => (
             <li className='text-center capitalize' key={menu}>
-              <h5 className='font-light tracking-wider'>
+              <h5 className='font-light tracking-wider text-amber-50'>
                 <a
                   onClick={(
                     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -128,7 +128,7 @@ function Footer(props: Props): JSX.Element {
                     {menu}
                   </a>
                   {router.asPath === `/${menu}` && (
-                    <div className='w-5 mx-auto mt-0.5 border-t' />
+                    <div className='w-5 mx-auto mt-0.5 border-t border-amber-100' />
                   )}
                 </h6>
               </li>

@@ -5,7 +5,7 @@ import { ExampleComponent } from 'components/ExampleComponent'
 
 const Writings: NextPage = (): JSX.Element => {
   return (
-    <Layout title='Writing'>
+    <Layout title='Writings'>
       <section className='grid min-h-screen place-items-center'>
         <ExampleComponent title='writings' />
         <article>Articles section</article>

@@ -22,7 +22,7 @@ export const MobileActiveLink: React.FC<MobileProps> = ({
     <a
       href={href}
       onClick={handleClick}
-      className={`${router.asPath === href ? 'text-coolGray-500' : ''}`}
+      className={`${router.asPath === href ? 'text-amber-100' : ''}`}
     >
       {children}
     </a>

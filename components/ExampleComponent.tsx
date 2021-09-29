@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 
-const ExampleComponent: React.FC<{ title: string }> = ({
-  title,
-}): JSX.Element => {
+const ExampleComponent: React.FC<{ title: string }> = (props): JSX.Element => {
   const headerVariant = {
     hidden: { translateY: 50, opacity: 0 },
     visible: {
@@ -20,9 +18,9 @@ const ExampleComponent: React.FC<{ title: string }> = ({
         variants={headerVariant}
         initial='hidden'
         animate='visible'
-        className='p-2 font-extrabold text-transparent capitalize text-7xl md:text-8xl bg-gradient-to-br via-coolGray-50 from-amber-900 bg-clip-text to-amber-800'
+        className='p-2 font-extrabold text-transparent capitalize text-7xl md:text-8xl bg-gradient-to-b via-white from-amber-900 bg-clip-text to-amber-900'
       >
-        {title}
+        {props.title}
       </motion.h1>
     </div>
   )

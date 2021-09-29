@@ -27,7 +27,7 @@ export const ActiveLink: React.FC<Props> = ({
         <motion.div
           layoutId='underline'
           transition={spring}
-          className='w-5 mx-auto mt-0.5 border-t'
+          className='w-5 mx-auto mt-0.5 border-t border-amber-100'
         />
       )}
     </>

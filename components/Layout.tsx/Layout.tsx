@@ -56,7 +56,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
           <motion.section
             initial={false}
             animate={animation}
-            className='z-20 bg-black border-t-[1px] border-trueGray-400 border-transparent shadow-lg bg-gradient-to-tr from-trueGray-800 via-trueGray-400 to-trueGray-700 rounded-t-3xl'
+            className='z-20 bg-black border-t-[1px] border-amber-100 border-transparent shadow-lg bg-gradient-to-tr from-trueGray-800 via-trueGray-400 to-trueGray-700 rounded-t-3xl'
           >
             <div className='flex items-center px-16 justify-between pt-[60px]'>
               <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
