@@ -49,9 +49,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
   return (
     <Fragment>
       <Header title={title} />
-      <div className='relative w-full mx-auto max-w-7xl FuturaPT'>
-        <Nav menus={MENU_LIST} />
-
+      <div className='relative w-full px-16 mx-auto max-w-7xl FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='-pt-10 md:hidden'>
           <MobileNav menus={MENU_LIST} isToggled={isToggled} />
@@ -73,6 +71,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
 
         {/* // * Start Desktop View */}
         <div className='hidden md:block'>
+          <Nav menus={MENU_LIST} />
           <main className='z-10'>{children}</main>
         </div>
         {/* // * Ends Desktop View */}

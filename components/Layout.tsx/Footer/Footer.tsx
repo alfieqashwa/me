@@ -77,7 +77,7 @@ function Footer(props: Props): JSX.Element {
       </footer>
 
       {/* // * Desktop View */}
-      <footer className='hidden bg-[#171B20] pt-20 pb-16 -mx-20 md:block'>
+      <footer className='hidden bg-[#171B20] pt-20 pb-16 -mx-36 md:block'>
         <section className='z-10 flex items-center justify-between px-36'>
           <nav className='flex items-center justify-between space-x-14'>
             <DesktopLogo />
@@ -115,7 +115,7 @@ function Footer(props: Props): JSX.Element {
           <ul className='flex items-center space-x-12'>
             {props.menus.map((menu) => (
               <li key={menu}>
-                <h6 className='tracking-wider capitalize transition duration-300 ease-in-out hover:opacity-80'>
+                <h6 className='tracking-wider text-transparent capitalize transition duration-300 ease-in-out bg-clip-text bg-gradient-to-b via-white from-amber-50 to-amber-50 hover:opacity-80'>
                   <a
                     href={`/${menu}`}
                     onClick={(
@@ -135,7 +135,7 @@ function Footer(props: Props): JSX.Element {
             ))}
           </ul>
         </section>
-        <p className='pt-24 text-sm tracking-widest text-center text-trueGray-500'>
+        <p className='pt-24 text-sm tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-b via-white from-amber-100 to-amber-100'>
           © {new Date().getFullYear()} Alfie Qashwa
         </p>
       </footer>
