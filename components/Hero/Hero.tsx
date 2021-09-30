@@ -50,7 +50,7 @@ export const HeroWithQuote: React.FC<{ quote: string }> = (
     >
       <motion.div
         variants={glowVariants}
-        transition={{ ease: 'easeOut', delay: 0.15 }}
+        transition={{ ease: 'easeInOut', duration: 0.5 }}
         className='absolute -inset-0.5 w-full h-full bg-gradient-to-r from-pink-600 to-violet-600 rounded-2xl blur-lg'
       />
       <div className='relative h-full px-10 py-12 mb-0 overflow-hidden bg-black rounded-2xl'>

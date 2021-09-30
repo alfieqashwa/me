@@ -12,7 +12,7 @@ const Nav: React.FC<Props> = (props: Props): JSX.Element => {
       <ul className='flex items-center space-x-12'>
         {props.menus.map((menu) => (
           <li key={menu}>
-            <h6 className='tracking-wider text-transparent capitalize transition duration-300 ease-in-out bg-clip-text bg-gradient-to-b from-amber-50 to-amber-50 hover:opacity-80'>
+            <h6 className='tracking-wider capitalize transition duration-300 ease-in-out text-amber-50 hover:opacity-80'>
               <ActiveLink href={`/${menu}`}>{menu}</ActiveLink>
             </h6>
           </li>
