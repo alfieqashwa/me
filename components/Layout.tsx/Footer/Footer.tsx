@@ -18,8 +18,8 @@ function Footer(props: Props): JSX.Element {
   return (
     <>
       {/* // * Mobile View */}
-      <footer className='w-full h-full bg-[#171B20] md:hidden'>
-        <div className='w-11/12 pt-16 mx-auto border-t border-gray-600' />
+      <footer className='w-full bg-[#171B20] md:hidden'>
+        <div className='w-10/12 pt-16 mx-auto border-t border-amber-100' />
         <ul className='pt-4 pb-16 space-y-12'>
           {props.menus.map((menu) => (
             <li className='text-center capitalize' key={menu}>
@@ -31,12 +31,14 @@ function Footer(props: Props): JSX.Element {
                     e.preventDefault()
                     router.push(`/${menu}`)
                   }}
+                  className={`${
+                    router.asPath === `/${menu}`
+                      ? 'text-amber-300'
+                      : 'text-amber-100'
+                  }`}
                 >
                   {menu}
                 </a>
-                {router.asPath === `/${menu}` && (
-                  <div className='w-5 mx-auto mt-0.5 border-t' />
-                )}
               </h5>
             </li>
           ))}
@@ -135,7 +137,7 @@ function Footer(props: Props): JSX.Element {
             ))}
           </ul>
         </section>
-        <p className='pt-24 text-sm tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-b via-white from-amber-100 to-amber-100'>
+        <p className='text-sm tracking-widest text-center text-transparent pt-28 bg-clip-text bg-gradient-to-b via-white from-amber-100 to-amber-100'>
           © {new Date().getFullYear()} Alfie Qashwa
         </p>
       </footer>

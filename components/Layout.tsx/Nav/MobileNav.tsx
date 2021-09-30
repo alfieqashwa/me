@@ -67,34 +67,34 @@ export const MobileNav: React.FC<Props> = (props) => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineTwitter className='w-4 h-4' />
+            <AiOutlineTwitter className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.github.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineGithub className='w-4 h-4' />
+            <AiOutlineGithub className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.instagram.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineInstagram className='w-4 h-4' />
+            <AiOutlineInstagram className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.reverbnation.com/tweleph'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <SiReverbnation className='w-4 h-4' />
+            <SiReverbnation className='w-4 h-4 text-amber-300' />
           </a>
         </motion.div>
       </section>
       <motion.div
         animate={borderAnimation}
-        className='w-10/12 mx-auto border-t border-gray-600'
+        className='w-10/12 mx-auto border-t border-amber-100'
       />
       <ul className='pt-12 pb-16 space-y-8'>
         {props.menus.map((menu) => (
