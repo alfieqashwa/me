@@ -23,7 +23,7 @@ function Footer(props: Props): JSX.Element {
         <ul className='pt-4 pb-16 space-y-12'>
           {props.menus.map((menu) => (
             <li className='text-center capitalize' key={menu}>
-              <h5 className='font-light tracking-wider text-amber-50'>
+              <h5 className='font-light tracking-wider text-amber-100'>
                 <a
                   onClick={(
                     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -47,31 +47,31 @@ function Footer(props: Props): JSX.Element {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineTwitter className='w-4 h-4 text-trueGray-500' />
+            <AiOutlineTwitter className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.github.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineGithub className='w-4 h-4 text-trueGray-500' />
+            <AiOutlineGithub className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.instagram.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <AiOutlineInstagram className='w-4 h-4 text-trueGray-500' />
+            <AiOutlineInstagram className='w-4 h-4 text-amber-300' />
           </a>
           <a
             href='https://www.reverbnation.com/tweleph'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <SiReverbnation className='w-4 h-4 text-trueGray-500' />
+            <SiReverbnation className='w-4 h-4 text-amber-300' />
           </a>
         </section>
-        <p className='pt-16 pb-20 text-sm tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-b via-white from-amber-100 to-amber-100'>
+        <p className='pt-16 pb-20 text-sm tracking-widest text-center text-amber-200'>
           © {new Date().getFullYear()} Alfie Qashwa
         </p>
       </footer>

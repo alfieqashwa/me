@@ -62,7 +62,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
             <div className='flex items-center px-16 justify-between pt-[60px]'>
               <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
               <button onClick={handleToggle}>
-                <MenuAlt4Icon className='w-6 h-6' />
+                <MenuAlt4Icon className='w-6 h-6 text-amber-100' />
               </button>
             </div>
             <main className='z-10 px-16'>{children}</main>
