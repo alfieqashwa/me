@@ -7,9 +7,31 @@ type Props = {
 }
 
 const Hero: React.FC<Props> = (props): JSX.Element => {
+  const heroVariants = {
+    hidden: { translateY: 50, opacity: 0 },
+    visible: {
+      translateY: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        delay: 0.2,
+      },
+    },
+  }
+
+  const quoteVariants = {
+    initial: { rotate: -15, x: -50 },
+    animate: { rotate: 15, x: 50 },
+  }
+
   return (
     <div className='mx-auto mt-40 md:mt-0 md-center md:justify-between md:flex md:py-60'>
-      <section className='items-center space-y-4 flex-cols'>
+      <motion.section
+        variants={heroVariants}
+        initial='hidden'
+        animate='visible'
+        className='items-center space-y-4 flex-cols'
+      >
         <motion.h1
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
@@ -20,10 +42,23 @@ const Hero: React.FC<Props> = (props): JSX.Element => {
         <h2 className='text-2xl text-center text-transparent md:text-left md:text-4xl bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'>
           {props.description}
         </h2>
-      </section>
-      <section className='flex items-center justify-center'>
+      </motion.section>
+      <motion.section
+        variants={quoteVariants}
+        initial='initial'
+        animate='animate'
+        transition={{
+          type: 'tween',
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatType: 'reverse',
+          repeatDelay: 1,
+          duration: 2,
+        }}
+        className='flex items-center justify-center'
+      >
         {props.children}
-      </section>
+      </motion.section>
     </div>
   )
 }
