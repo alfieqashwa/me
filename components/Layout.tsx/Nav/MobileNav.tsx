@@ -63,6 +63,7 @@ export const MobileNav: React.FC<Props> = (props) => {
           className='flex items-center justify-center space-x-14'
         >
           <a
+            className='p-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
             href='https://www.twitter.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
@@ -70,6 +71,7 @@ export const MobileNav: React.FC<Props> = (props) => {
             <AiOutlineTwitter className='w-4 h-4 text-amber-300' />
           </a>
           <a
+            className='p-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
             href='https://www.github.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
@@ -77,6 +79,7 @@ export const MobileNav: React.FC<Props> = (props) => {
             <AiOutlineGithub className='w-4 h-4 text-amber-300' />
           </a>
           <a
+            className='p-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
             href='https://www.instagram.com/alfieqashwa'
             target='_blank'
             rel='noopener noreferrer'
@@ -84,6 +87,7 @@ export const MobileNav: React.FC<Props> = (props) => {
             <AiOutlineInstagram className='w-4 h-4 text-amber-300' />
           </a>
           <a
+            className='p-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
             href='https://www.reverbnation.com/tweleph'
             target='_blank'
             rel='noopener noreferrer'

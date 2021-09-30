@@ -26,13 +26,17 @@ export const MobileLogo: React.FC<Props> = (props): JSX.Element => {
           className='transition duration-300 ease-in-out hover:opacity-80'
         >
           <Link href='/' passHref>
-            {LOGO}
+            <a className='px-1 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'>
+              {LOGO}
+            </a>
           </Link>
         </motion.h4>
       ) : (
         <motion.h4 className='transition duration-300 ease-in-out hover:opacity-80'>
-          <Link href='/' passHref>
-            {LOGO}
+          <Link href='/'>
+            <a className='px-1 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'>
+              {LOGO}
+            </a>
           </Link>
         </motion.h4>
       )}
