@@ -56,7 +56,7 @@ export const HeroWithQuote: React.FC<{ quote: string }> = (
   }
 
   const quoteVariants = {
-    initial: { y: -50 },
+    initial: { y: -60 },
     animate: { y: 40 },
   }
 

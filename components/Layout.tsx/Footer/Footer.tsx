@@ -83,7 +83,7 @@ function Footer(props: Props): JSX.Element {
       </footer>
 
       {/* // * Desktop View */}
-      <footer className='hidden bg-[#171B20] pt-20 pb-16 md:block'>
+      <footer className='hidden bg-[#171B20] -mx-36 pt-20 pb-16 md:block'>
         <section className='z-10 flex items-center justify-between px-36'>
           <nav className='flex items-center justify-between space-x-14'>
             <DesktopLogo />

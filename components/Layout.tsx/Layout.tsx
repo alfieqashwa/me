@@ -49,9 +49,8 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
   return (
     <Fragment>
       <Header title={title} />
-      <div className='relative w-full md:max-w-7xl FuturaPT'>
+      <div className='relative max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
-
         <div className='w-full -pt-10 md:hidden'>
           <MobileNav menus={MENU_LIST} isToggled={isToggled} />
           <motion.section
