@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { MenuAlt4Icon } from '@heroicons/react/outline'
+import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline'
 import { useAnimation, motion } from 'framer-motion'
 
 import { Header } from './Header'
@@ -16,16 +16,16 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
-  const [isToggled, setIsToggled] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const animation = useAnimation()
 
-  const handleToggle = () => {
-    setIsToggled(!isToggled)
+  const toggleClick = () => {
+    setIsOpen(!isOpen)
   }
 
   useEffect(() => {
-    if (!isToggled) {
+    if (!isOpen) {
       animation.start({
         translateY: -452,
         transition: {
@@ -38,13 +38,13 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
         },
       })
     }
-    if (isToggled) {
+    if (isOpen) {
       animation.start({
         translateY: -20,
         transition: spring,
       })
     }
-  }, [isToggled, animation])
+  }, [isOpen, animation])
 
   return (
     <Fragment>
@@ -52,19 +52,23 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
       <div className='relative max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='w-full -pt-10 md:hidden'>
-          <MobileNav menus={MENU_LIST} isToggled={isToggled} />
+          <MobileNav menus={MENU_LIST} isOpen={isOpen} />
           <motion.section
             initial={false}
             animate={animation}
             className='z-20 bg-black pb-7 border-t-[1px] border-amber-100 border-transparent shadow-lg rounded-t-3xl'
           >
             <div className='flex items-center px-8 md:px-16 justify-between pt-[60px]'>
-              <MobileLogo isToggled={isToggled} setIsToggled={setIsToggled} />
+              <MobileLogo isToggled={isOpen} setIsToggled={setIsOpen} />
               <button
                 className='px-1 py-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
-                onClick={handleToggle}
+                onClick={toggleClick}
               >
-                <MenuAlt4Icon className='w-6 h-6 text-amber-100' />
+                {!isOpen ? (
+                  <MenuAlt4Icon className='w-6 h-6 text-amber-100' />
+                ) : (
+                  <XIcon className='w-6 h-6 text-amber-100' />
+                )}
               </button>
             </div>
             <main className='z-10 px-8 '>{children}</main>

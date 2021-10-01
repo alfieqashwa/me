@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 const LOGO = 'LOGO'
 
@@ -11,7 +11,7 @@ export const DesktopLogo: React.FC = (): JSX.Element => {
   return (
     <h4 className='transition duration-300 ease-in-out hover:opacity-80'>
       <Link href='/' passHref>
-        <a className='px-1 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'>
+        <a className='px-1 py-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'>
           {LOGO}
         </a>
       </Link>
@@ -36,7 +36,7 @@ export const MobileLogo: React.FC<Props> = (props): JSX.Element => {
       ) : (
         <motion.h4 className='transition duration-300 ease-in-out hover:opacity-80'>
           <Link href='/'>
-            <a className='px-1 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'>
+            <a className='px-1 py-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'>
               {LOGO}
             </a>
           </Link>

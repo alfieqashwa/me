@@ -11,7 +11,7 @@ import { MobileActiveLink } from './MobileActiveLink'
 
 type Props = {
   menus: string[]
-  isToggled: boolean
+  isOpen: boolean
 }
 
 export const MobileNav: React.FC<Props> = (props) => {
@@ -19,7 +19,7 @@ export const MobileNav: React.FC<Props> = (props) => {
   const borderAnimation = useAnimation()
 
   useEffect(() => {
-    if (props.isToggled) {
+    if (props.isOpen) {
       animation.start({
         translateY: 0,
         opacity: 1,
@@ -37,7 +37,7 @@ export const MobileNav: React.FC<Props> = (props) => {
           },
         })
     }
-    if (!props.isToggled) {
+    if (!props.isOpen) {
       animation.start({
         translateY: -10,
         opacity: 0,
@@ -53,7 +53,7 @@ export const MobileNav: React.FC<Props> = (props) => {
           },
         })
     }
-  }, [props.isToggled, animation, borderAnimation])
+  }, [props.isOpen, animation, borderAnimation])
 
   return (
     <nav className='z-0 w-full bg-defaultColor md:hidden'>

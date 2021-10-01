@@ -134,7 +134,7 @@ function Footer(props: Props): JSX.Element {
                       e.preventDefault()
                       router.push(`/${menu}`)
                     }}
-                    className='px-1.5 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'
+                    className='px-1.5 py-0.5 rounded focus:outline-none focus:ring-2 ring-amber-50'
                   >
                     {menu}
                   </a>

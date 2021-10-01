@@ -24,7 +24,7 @@ export const ActiveLink: React.FC<Props> = ({
         layout
         href={href}
         onClick={handleClick}
-        className='px-1.5 py-0.5 rounded-md focus:outline-none focus:ring-2 ring-amber-50'
+        className='px-1.5 py-0.5 rounded-md focus:outline-none'
       >
         {children}
       </motion.a>

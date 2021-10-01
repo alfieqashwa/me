@@ -28,6 +28,7 @@ const Hero: React.FC<Props> = (props): JSX.Element => {
       >
         <motion.h1
           whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
           className='text-5xl font-extrabold tracking-wide text-center text-transparent md:font-sans md:text-left bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'
         >
