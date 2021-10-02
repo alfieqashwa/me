@@ -1,11 +1,11 @@
 import { ActiveLink } from './ActiveLink'
-import { DesktopLogo } from './Logo'
+import { DesktopLogo } from 'components/Layout/Logo'
 
 type Props = {
   menus: string[]
 }
 
-const Nav: React.FC<Props> = (props: Props): JSX.Element => {
+const DesktopNavigation: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <nav className='z-10 flex items-center justify-between pt-14'>
       <DesktopLogo />
@@ -21,4 +21,4 @@ const Nav: React.FC<Props> = (props: Props): JSX.Element => {
     </nav>
   )
 }
-export default Nav
+export default DesktopNavigation

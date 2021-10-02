@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-import Layout from 'components/Layout.tsx'
+import Layout from 'components/Layout'
 import { ExampleComponent } from 'components/ExampleComponent'
 
 const Contact: NextPage = (): JSX.Element => {

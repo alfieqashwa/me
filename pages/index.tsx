@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-import Layout from 'components/Layout.tsx'
+import Layout from 'components/Layout'
 import Hero, { HeroWithQuote } from 'components/Hero'
 
 const Home: NextPage = (): JSX.Element => {

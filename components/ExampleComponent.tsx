@@ -18,7 +18,7 @@ const ExampleComponent: React.FC<{ title: string }> = (props): JSX.Element => {
         variants={headerVariant}
         initial='hidden'
         animate='visible'
-        className='p-2 font-extrabold text-transparent capitalize text-7xl md:text-8xl bg-gradient-to-b via-white from-amber-900 bg-clip-text to-amber-900'
+        className='p-2 font-extrabold text-transparent capitalize md:text-8xl bg-gradient-to-b via-white from-amber-900 bg-clip-text to-amber-900'
       >
         {props.title}
       </motion.h1>

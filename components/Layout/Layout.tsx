@@ -3,10 +3,10 @@ import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline'
 import { useAnimation, motion } from 'framer-motion'
 
 import { Header } from './Header'
-import Nav from 'components/Layout.tsx/Nav'
-import Footer from 'components/Layout.tsx/Footer'
-import { MobileNav } from './Nav/MobileNav'
-import { MobileLogo } from './Nav/Logo'
+import DesktopNavigation from './Navigation/DesktopNavigation'
+import Footer from 'components/Layout/Footer'
+import MobileNavigation from './Navigation/MobileNavigation'
+import { MobileLogo } from './Logo'
 
 import { MENU_LIST } from 'constants/menu-list'
 
@@ -52,7 +52,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
       <div className='relative max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='w-full -pt-10 md:hidden'>
-          <MobileNav menus={MENU_LIST} isOpen={isOpen} />
+          <MobileNavigation menus={MENU_LIST} isOpen={isOpen} />
           <motion.section
             initial={false}
             animate={animation}
@@ -65,9 +65,9 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
                 onClick={toggleClick}
               >
                 {!isOpen ? (
-                  <MenuAlt4Icon className='w-6 h-6 text-amber-100' />
+                  <MenuAlt4Icon className='w-6 h-6 text-amber-50' />
                 ) : (
-                  <XIcon className='w-6 h-6 text-amber-100' />
+                  <XIcon className='w-6 h-6 text-amber-50' />
                 )}
               </button>
             </div>
@@ -78,7 +78,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
 
         {/* // * Start Desktop View */}
         <div className='hidden md:block'>
-          <Nav menus={MENU_LIST} />
+          <DesktopNavigation menus={MENU_LIST} />
           <main className='z-10'>{children}</main>
         </div>
         {/* // * Ends Desktop View */}

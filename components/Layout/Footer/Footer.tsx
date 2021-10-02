@@ -6,7 +6,7 @@ import {
 } from 'react-icons/ai'
 import { SiReverbnation } from 'react-icons/si'
 
-import { DesktopLogo } from 'components/Layout.tsx/Nav/Logo'
+import { DesktopLogo } from 'components/Layout/Logo'
 
 type Props = {
   menus: string[]
@@ -23,7 +23,7 @@ function Footer(props: Props): JSX.Element {
         <ul className='pt-4 pb-16 space-y-12'>
           {props.menus.map((menu) => (
             <li className='text-center capitalize' key={menu}>
-              <h5 className='font-light tracking-wider text-amber-100'>
+              <h5 className='font-light tracking-wider text-amber-50'>
                 <a
                   onClick={(
                     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>

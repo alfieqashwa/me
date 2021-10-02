@@ -14,7 +14,7 @@ type Props = {
   isOpen: boolean
 }
 
-export const MobileNav: React.FC<Props> = (props) => {
+const MobileNavigation: React.FC<Props> = (props) => {
   const animation = useAnimation()
   const borderAnimation = useAnimation()
 
@@ -123,3 +123,5 @@ const spring = {
   stiffness: 400,
   damping: 40,
 }
+
+export default MobileNavigation
