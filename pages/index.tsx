@@ -5,7 +5,7 @@ import Hero, { HeroWithQuote } from 'components/Hero'
 
 const Home: NextPage = (): JSX.Element => {
   return (
-    <Layout>
+    <Layout pageTitle='Home'>
       <div className='items-center justify-center md:flex'>
         <Hero title='Cello World!' description='Welcome to my personal blog' />
         <HeroWithQuote quote='✨ Home is not a house ✨' />

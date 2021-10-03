@@ -1,105 +1,119 @@
-import fs from 'fs'
-import path from 'path'
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import ErrorPage from 'next/error'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import { motion } from 'framer-motion'
 
-import CustomLink from 'components/CustomLink'
-import { writingFilePaths, WRITINGS_PATH } from 'utils/mdxUtils'
-import matter from 'gray-matter'
 import Layout from 'components/Layout'
+import CustomLink from 'components/CustomLink'
+import IPost from 'types/post'
+import { getPost, getAllPosts } from 'utils/api'
+import { SITE_URL } from 'utils/constants'
+import PostTitle from 'components/PostTitle'
+import Container from 'components/Container'
+import PostHeader from 'components/PostHeader'
+import PostBody from 'components/PostBody'
 
-type WritingPageProps = {
+type Props = {
   source: MDXRemoteSerializeResult
-  frontMatter: {
-    title: string
-    description: string
-  }
+  frontMatter: Omit<IPost, 'slug' | 'content'>
+  slug: string
 }
-
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
 const components = {
   a: CustomLink,
 
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('components/TestComponent')),
   HeroWithQuote: dynamic(() => import('components/HeroWithQuote')),
   Head,
 }
 
-export default function WritingPage({ source, frontMatter }: WritingPageProps) {
-  return (
-    <Layout title={frontMatter.title}>
-      <header>
-        <nav>
-          <Link href='/writings'>
-            <a>👈 Go back home</a>
-          </Link>
-        </nav>
-      </header>
-      <div className='post-header'>
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className='description'>{frontMatter?.description}</p>
-        )}
-      </div>
-      <main>
-        <MDXRemote {...source} components={components} />
-      </main>
+const Writing: NextPage<Props> = ({ source, frontMatter, slug }: Props) => {
+  const router = useRouter()
 
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-      `}</style>
+  const ogImage = SITE_URL + frontMatter.coverImage
+
+  if (!router.isFallback && !slug) {
+    return <ErrorPage statusCode={404} />
+  }
+
+  return (
+    <Layout pageTitle={frontMatter.title}>
+      <Container>
+        {router.isFallback ? (
+          <PostTitle>Loading...</PostTitle>
+        ) : (
+          <article className='py-8 mx-auto prose lg:prose-xl prose-purple lg:py-16'>
+            <Head>
+              <meta
+                name='description'
+                content={frontMatter.description}
+                key='description'
+              />
+              <meta
+                property='og:description'
+                content={frontMatter.description}
+                key='ogDescription'
+              />
+              <meta property='og:image' content={ogImage} key='ogImage' />
+            </Head>
+
+            <PostHeader
+              title={frontMatter.title}
+              coverImage={frontMatter.coverImage}
+              author={frontMatter.author}
+              publishDate={frontMatter.publishDate}
+              updateDate={frontMatter.updateDate}
+            />
+
+            <PostBody
+              content={<MDXRemote {...source} components={components} />}
+            />
+          </article>
+        )}
+      </Container>
     </Layout>
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const writingFilePath = path.join(WRITINGS_PATH, `${params?.slug}.mdx`)
-  const source = fs.readFileSync(writingFilePath)
+export default Writing
 
-  const { content, data } = matter(source)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { content, data } = getPost(params?.slug as string)
 
   const mdxSource = await serialize(content, {
+    scope: data,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
+      // remarkPlugins: [prism], // TODO
       rehypePlugins: [],
     },
-    scope: data,
   })
+
+  const slug = params?.slug
 
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug,
     },
   }
   // revalidate: 1
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = writingFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    // Map the path into the static object rewuired by Next.js
-    .map((slug) => ({ params: { slug } }))
+  const posts = getAllPosts(['slug'])
+
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }))
 
   return {
     paths,

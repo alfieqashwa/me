@@ -8,14 +8,21 @@ import Footer from 'components/Layout/Footer'
 import MobileNavigation from './Navigation/MobileNavigation'
 import { MobileLogo } from './Logo'
 
-import { MENU_LIST } from 'constants/menu-list'
+import { MENU_LIST } from 'utils/constants/menu-list'
 
 type Props = {
-  title?: string
+  pageTitle: string
+  hasRepo?: boolean
+  postPath?: string
   children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
+const Layout: React.FC<Props> = ({
+  pageTitle,
+  hasRepo,
+  postPath,
+  children,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const animation = useAnimation()
@@ -48,7 +55,7 @@ const Layout: React.FC<Props> = ({ title = 'Home', children }) => {
 
   return (
     <Fragment>
-      <Header title={title} />
+      <Header pageTitle={pageTitle} />
       <div className='relative max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='w-full -pt-10 md:hidden'>

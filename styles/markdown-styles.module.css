@@ -1,0 +1,23 @@
+.markdown code,
+.markdown-dark code {
+  @apply px-2 py-1 text-sm font-normal bg-gray-200 rounded;
+}
+
+.markdown code::before,
+.markdown code::after,
+.markdown-dark code::before,
+.markdown-dark code::after {
+  content: none;
+}
+
+.markdown-dark h2,
+.markdown-dark h3,
+.markdown-dark h4,
+.markdown-dark strong {
+  @apply text-gray-100;
+}
+
+.markdown-dark li,
+.markdown-dark p {
+  @apply text-gray-300;
+}
