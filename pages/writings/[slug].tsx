@@ -70,7 +70,13 @@ const Writing: NextPage<Props> = ({ source, frontMatter, slug }: Props) => {
             />
 
             <PostBody
-              content={<MDXRemote {...source} components={components} />}
+              content={
+                <MDXRemote
+                  {...source}
+                  components={components}
+                  scope={{ motion }}
+                />
+              }
             />
           </article>
         )}

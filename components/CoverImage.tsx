@@ -20,7 +20,7 @@ const CoverImage: React.FC<Props> = ({ title, src, slug }: Props) => {
   return (
     <>
       {slug ? (
-        <CustomLink href={`/blog/${slug}`} aria-label={title}>
+        <CustomLink href={`/writings/${slug}`} aria-label={title}>
           {image}
         </CustomLink>
       ) : (
