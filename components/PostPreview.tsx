@@ -3,6 +3,7 @@ import CoverImage from './CoverImage'
 import CustomLink from './CustomLink'
 import DateFormatter from './DateFormatter'
 import IAuthor from 'types/author'
+import IPost from 'types/post'
 
 type Props = {
   slug: string

@@ -31,7 +31,7 @@ const Writings: NextPage<Props> = ({ allPosts }: Props): JSX.Element => {
   return (
     <Layout pageTitle='Writings'>
       <Container>
-        <h1 className='py-4 my-8 text-6xl font-bold leading-tight tracking-tight text-center border-t border-b md:text-8xl dark:text-gray-100 md:py-8 md:mb-16'>
+        <h1 className='py-4 my-8 text-6xl font-bold leading-tight tracking-tight border-b md:text-8xl md:py-8 md:mb-16'>
           {pageTitle}
         </h1>
 

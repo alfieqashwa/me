@@ -11,6 +11,7 @@ type Props = {
 const CoverImage: React.FC<Props> = ({ title, src, slug }: Props) => {
   const image = (
     <Image
+      className='object-cover'
       src={src}
       alt={`Cover Image for ${title}`}
       width={1280}
