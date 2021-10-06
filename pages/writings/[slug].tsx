@@ -108,8 +108,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       frontMatter: data,
       slug,
     },
+    revalidate: 60,
   }
-  // revalidate: 1
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

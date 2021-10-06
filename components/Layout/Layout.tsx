@@ -54,7 +54,7 @@ const Layout: React.FC<Props> = ({
   }, [isOpen, animation])
 
   return (
-    <Fragment>
+    <div className='bg-[#101216]'>
       <Header pageTitle={pageTitle} />
       <div className='relative max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
@@ -63,7 +63,7 @@ const Layout: React.FC<Props> = ({
           <motion.section
             initial={false}
             animate={animation}
-            className='z-20 bg-black pb-7 border-t-[1px] border-amber-100 border-transparent shadow-lg rounded-t-3xl'
+            className='z-20 bg-[#101216] pb-7 border-t-[1px] border-amber-100 border-transparent shadow-lg rounded-t-3xl'
           >
             <div className='flex items-center px-8 md:px-16 justify-between pt-[60px]'>
               <MobileLogo isToggled={isOpen} setIsToggled={setIsOpen} />
@@ -78,7 +78,7 @@ const Layout: React.FC<Props> = ({
                 )}
               </button>
             </div>
-            <main className='z-10 px-8 '>{children}</main>
+            <main className='z-10 px-8'>{children}</main>
           </motion.section>
         </div>
         {/* // * Ends Mobile View */}
@@ -92,7 +92,7 @@ const Layout: React.FC<Props> = ({
 
         <Footer menus={MENU_LIST} />
       </div>
-    </Fragment>
+    </div>
   )
 }
 
