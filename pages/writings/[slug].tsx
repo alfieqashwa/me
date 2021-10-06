@@ -17,6 +17,7 @@ import PostTitle from 'components/PostTitle'
 import Container from 'components/Container'
 import PostHeader from 'components/PostHeader'
 import PostBody from 'components/PostBody'
+import Paragraph from 'components/Paragraph'
 
 type Props = {
   source: MDXRemoteSerializeResult
@@ -25,6 +26,7 @@ type Props = {
 }
 const components = {
   a: CustomLink,
+  p: Paragraph,
 
   TestComponent: dynamic(() => import('components/TestComponent')),
   HeroWithQuote: dynamic(() => import('components/HeroWithQuote')),
@@ -46,7 +48,7 @@ const Writing: NextPage<Props> = ({ source, frontMatter, slug }: Props) => {
         {router.isFallback ? (
           <PostTitle>Loading...</PostTitle>
         ) : (
-          <article className='py-8 mx-auto prose lg:prose-xl prose-purple lg:py-16'>
+          <article className='py-8 mx-auto prose lg:prose-xl prose-amber lg:py-16'>
             <Head>
               <meta
                 name='description'
