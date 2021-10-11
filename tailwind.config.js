@@ -49,35 +49,47 @@ module.exports = {
       colors: {
         defaultColor: '#1D2128',
       },
-      // typography: (theme) => ({
-      //   DEFAULT: {
-      //     css: {
-      //       'ul > li:before': {
-      //         background: theme('colors.amber.200'),
-      //         borderRadius: '0%',
-      //       },
-      //       'ol > li:before': {
-      //         color: theme('colors.amber.200'),
-      //       },
-      //       li: {
-      //         color: theme('colors.amber.200'),
-      //       },
-      //       blockquote: {
-      //         borderLeftColor: theme('colors.pink.500'),
-      //       fontSize: '1.75rem',
-      //       },
-      //       'blockquote > p': {
-      //         color: theme('colors.amber.200'),
-      //       },
-      //       strong: {
-      //         color: theme('colors.amber.200'),
-      //       },
-      //       em: {
-      //         color: theme('colors.amber.200'),
-      //       },
-      //     },
-      //   },
-      // }),
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              color: theme('colors.pink.500'),
+            },
+            p: {
+              color: theme('colors.amber.100'),
+            },
+            time: {
+              color: theme('colors.amber.300'),
+            },
+            span: {
+              color: theme('colors.amber.300'),
+            },
+            // 'ul > li:before': {
+            //   background: theme('colors.amber.200'),
+            //   borderRadius: '0%',
+            // },
+            // 'ol > li:before': {
+            //   color: theme('colors.amber.200'),
+            // },
+            // li: {
+            //   color: theme('colors.amber.200'),
+            // },
+            // blockquote: {
+            //   borderLeftColor: theme('colors.pink.500'),
+            // fontSize: '1.75rem',
+            // },
+            // 'blockquote > p': {
+            //   color: theme('colors.amber.200'),
+            // },
+            // strong: {
+            //   color: theme('colors.amber.200'),
+            // },
+            // em: {
+            //   color: theme('colors.amber.200'),
+            // },
+          },
+        },
+      }),
     },
   },
   variants: {

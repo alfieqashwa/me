@@ -31,7 +31,7 @@ const PostHeader: React.FC<Props> = ({
         <div className='text-base text-gray-500'>
           {updateDate ? (
             <>
-              <DateFormatter dateString={publishDate} /> · Updated{' '}
+              <DateFormatter dateString={publishDate} /> <span>· Updated</span>{' '}
               <DateFormatter dateString={updateDate} />
             </>
           ) : (

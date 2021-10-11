@@ -15,7 +15,9 @@ const Avatar: React.FC<Props> = ({ name, picture }: Props) => {
         height={50}
         className='rounded-full'
       />
-      <div className='ml-4 text-lg font-bold dark:text-gray-300'>{name}</div>
+      <div className='ml-4'>
+        <p className='text-lg font-bold'>{name}</p>
+      </div>
     </div>
   )
 }

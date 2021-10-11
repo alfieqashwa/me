@@ -4,7 +4,7 @@ type Props = {
 
 const PostTitle: React.FC<Props> = ({ children }: Props) => {
   return (
-    <h1 className='tracking-tight text-center md:text-left dark:text-gray-100'>
+    <h1 className='font-extrabold tracking-tight text-center font-secondary md:text-left'>
       {children}
     </h1>
   )
