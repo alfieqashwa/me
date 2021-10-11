@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 // import { useTheme } from 'next-themes'
 
-import markdownStyles from '../styles/markdown-styles.module.css'
+import markdownStyles from 'styles/markdown-styles.module.css'
 
 type Props = {
   content: React.ReactNode

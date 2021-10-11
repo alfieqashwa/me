@@ -2,7 +2,6 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import ErrorPage from 'next/error'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -14,9 +13,10 @@ import IPost from 'types/post'
 import { getPost, getAllPosts } from 'utils/api'
 import { SITE_URL } from 'utils/constants'
 import PostTitle from 'components/PostTitle'
-import Container from 'components/Container'
+// import Container from 'components/Container'
 import PostHeader from 'components/PostHeader'
 import PostBody from 'components/PostBody'
+
 import Paragraph from 'components/Paragraph'
 
 type Props = {
@@ -44,45 +44,43 @@ const Writing: NextPage<Props> = ({ source, frontMatter, slug }: Props) => {
 
   return (
     <Layout pageTitle={frontMatter.title}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading...</PostTitle>
-        ) : (
-          <article className='py-8 mx-auto prose lg:prose-xl prose-amber lg:py-16'>
-            <Head>
-              <meta
-                name='description'
-                content={frontMatter.description}
-                key='description'
-              />
-              <meta
-                property='og:description'
-                content={frontMatter.description}
-                key='ogDescription'
-              />
-              <meta property='og:image' content={ogImage} key='ogImage' />
-            </Head>
-
-            <PostHeader
-              title={frontMatter.title}
-              coverImage={frontMatter.coverImage}
-              author={frontMatter.author}
-              publishDate={frontMatter.publishDate}
-              updateDate={frontMatter.updateDate}
+      {router.isFallback ? (
+        <PostTitle>Loading...</PostTitle>
+      ) : (
+        <article className='py-8 mx-auto prose lg:prose-xl prose-amber lg:py-16'>
+          <Head>
+            <meta
+              name='description'
+              content={frontMatter.description}
+              key='description'
             />
-
-            <PostBody
-              content={
-                <MDXRemote
-                  {...source}
-                  components={components}
-                  scope={{ motion }}
-                />
-              }
+            <meta
+              property='og:description'
+              content={frontMatter.description}
+              key='ogDescription'
             />
-          </article>
-        )}
-      </Container>
+            <meta property='og:image' content={ogImage} key='ogImage' />
+          </Head>
+
+          <PostHeader
+            title={frontMatter.title}
+            coverImage={frontMatter.coverImage}
+            author={frontMatter.author}
+            publishDate={frontMatter.publishDate}
+            updateDate={frontMatter.updateDate}
+          />
+
+          <PostBody
+            content={
+              <MDXRemote
+                {...source}
+                components={components}
+                scope={{ motion }}
+              />
+            }
+          />
+        </article>
+      )}
     </Layout>
   )
 }

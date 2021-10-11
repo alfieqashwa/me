@@ -1,6 +1,10 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  // corePlugins: {
+  //   // ...
+  //   listStyleType: false,
+  // },
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -31,6 +35,12 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+    },
     extend: {
       fontFamily: {
         primary: ['Futura PT Book', 'sans-serif'],
@@ -39,6 +49,53 @@ module.exports = {
       colors: {
         defaultColor: '#1D2128',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              color: theme('colors.pink.500'),
+            },
+            h2: {
+              color: theme('colors.pink.500'),
+            },
+            h3: {
+              color: theme('colors.pink.500'),
+            },
+            h4: {
+              color: theme('colors.pink.500'),
+            },
+            h5: {
+              color: theme('colors.pink.500'),
+            },
+            h6: {
+              color: theme('colors.pink.500'),
+            },
+            'ul > li:before': {
+              background: theme('colors.amber.200'),
+              borderRadius: '0%',
+            },
+            'ol > li:before': {
+              color: theme('colors.amber.200'),
+            },
+            li: {
+              color: theme('colors.amber.200'),
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.pink.500'),
+              // fontSize: '1.75rem',
+            },
+            'blockquote > p': {
+              color: theme('colors.amber.200'),
+            },
+            strong: {
+              color: theme('colors.amber.200'),
+            },
+            em: {
+              color: theme('colors.amber.200'),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {

@@ -17,7 +17,7 @@
   @apply text-gray-100;
 }
 
-.markdown-dark li,
+/* .markdown-dark li, */
 .markdown-dark p {
   @apply text-gray-300;
 }
