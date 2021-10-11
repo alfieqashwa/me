@@ -18,7 +18,7 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  @apply text-pink-500;
+  @apply font-bold text-transparent font-secondary bg-clip-text bg-gradient-to-br from-pink-600 to-purple-600;
 }
 
 .markdown strong,
@@ -46,11 +46,11 @@
 }
 
 .markdown blockquote {
-  @apply border-l-pink-500;
+  @apply border-l-amber-300;
 }
 
 .markdown blockquote > p {
-  @apply text-amber-200;
+  @apply text-2xl text-transparent bg-clip-text bg-gradient-to-b via-white from-amber-400 to-amber-400;
 }
 
 .markdown p {
