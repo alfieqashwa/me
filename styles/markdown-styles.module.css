@@ -1,7 +1,9 @@
-.markdown code,
-.markdown-dark code {
-  @apply px-2 py-1 text-sm font-normal bg-gray-200 rounded;
+.markdown code {
+  @apply px-2 py-1 font-mono text-sm text-pink-300 rounded;
 }
+/* .markdown-dark code {
+  @apply px-2 py-1 text-sm font-normal rounded bg-amber-200;
+} */
 
 .markdown code::before,
 .markdown code::after,
@@ -10,14 +12,52 @@
   content: none;
 }
 
-.markdown-dark h2,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply text-pink-500;
+}
+
+.markdown strong,
+.markdown em {
+  @apply text-amber-200;
+}
+
+/* .markdown-dark h2,
 .markdown-dark h3,
 .markdown-dark h4,
 .markdown-dark strong {
   @apply text-gray-100;
+} */
+
+.markdown ul > li::before {
+  @apply rounded-none bg-amber-200;
 }
 
-/* .markdown-dark li, */
+.markdown ol > li::before {
+  @apply text-amber-200;
+}
+
+.markdown li {
+  @apply text-amber-200;
+}
+
+.markdown blockquote {
+  @apply border-l-pink-500;
+}
+
+.markdown blockquote > p {
+  @apply text-amber-200;
+}
+
+.markdown p {
+  @apply text-lg text-transparent md:text-xl bg-clip-text bg-gradient-to-br from-coolGray-50 to-amber-50 font-primary;
+}
+
+/* .markdown-dark li,
 .markdown-dark p {
   @apply text-gray-300;
-}
+} */

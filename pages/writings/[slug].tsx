@@ -26,7 +26,7 @@ type Props = {
 }
 const components = {
   a: CustomLink,
-  p: Paragraph,
+  // p: Paragraph,
 
   TestComponent: dynamic(() => import('components/TestComponent')),
   HeroWithQuote: dynamic(() => import('components/HeroWithQuote')),
