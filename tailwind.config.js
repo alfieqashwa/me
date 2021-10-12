@@ -64,6 +64,31 @@ module.exports = {
             span: {
               color: theme('colors.amber.300'),
             },
+            table: {
+              thead: {
+                'th:first-child': {
+                  paddingLeft: '.75rem',
+                },
+                'th:last-child': {
+                  paddingRight: '.75rem',
+                },
+                th: {
+                  textAlign: 'left',
+                },
+              },
+              tbody: {
+                'td:first-child': {
+                  paddingLeft: '.75rem',
+                },
+                'td:last-child': {
+                  paddingRight: '.75rem',
+                },
+                td: {
+                  textAlign: 'left',
+                },
+              },
+            },
+            // table: { padding: '16px' },
             // 'ul > li:before': {
             //   background: theme('colors.amber.200'),
             //   borderRadius: '0%',
