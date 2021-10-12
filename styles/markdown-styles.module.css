@@ -59,9 +59,9 @@
 }
 
 .markdown th {
-  @apply py-4 text-lg font-semibold leading-7 bg-coolGray-700 text-coolGray-300;
+  @apply py-4 text-base font-semibold leading-7 md:text-lg bg-coolGray-700 text-coolGray-300;
 }
 
 .markdown td {
-  @apply py-4 text-base text-left border-t-[1px] border-coolGray-600 bg-coolGray-800 text-coolGray-300;
+  @apply py-4 text-sm md:text-base text-left border-t-[1px] border-coolGray-600 bg-coolGray-800 text-coolGray-300;
 }

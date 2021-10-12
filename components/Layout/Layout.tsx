@@ -56,7 +56,7 @@ const Layout: React.FC<Props> = ({
   return (
     <div className='bg-[#101216]'>
       <Header pageTitle={pageTitle} />
-      <div className='relative max-w-6xl md:mx-auto FuturaPT'>
+      <div className='relative w-full max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='w-full -pt-10 md:hidden'>
           <MobileNavigation menus={MENU_LIST} isOpen={isOpen} />
