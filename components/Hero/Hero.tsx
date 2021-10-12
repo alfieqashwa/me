@@ -30,11 +30,11 @@ const Hero: React.FC<Props> = (props): JSX.Element => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
-          className='text-5xl font-extrabold tracking-wide text-center text-transparent md:font-sans md:text-left bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'
+          className='text-5xl font-extrabold tracking-wide text-center text-transparent md:text-4xl lg:text-5xl md:font-sans md:text-left bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'
         >
           {props.title}
         </motion.h1>
-        <h2 className='text-xl text-center text-transparent md:text-left md:text-4xl bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'>
+        <h2 className='text-xl text-center text-transparent md:text-left md:text-2xl lg:text-4xl bg-clip-text bg-gradient-to-b via-white from-amber-900 to-amber-900'>
           {props.description}
         </h2>
       </motion.section>
@@ -93,7 +93,7 @@ export const HeroWithQuote: React.FC<{ quote: string }> = (
           className='absolute -inset-0.5 w-full h-full bg-gradient-to-r from-pink-600 to-violet-600 rounded-2xl blur-lg'
         />
         <div className='relative px-5 py-6 overflow-hidden bg-black md:px-10 md:py-12 rounded-2xl'>
-          <h3 className='flex items-center justify-center text-lg text-transparent md:h-12 md:text-3xl font-secondary bg-clip-text bg-gradient-to-tr via-white from-amber-900 to-amber-900'>
+          <h3 className='flex items-center justify-center text-xl text-transparent md:h-12 lg:text-3xl font-secondary bg-clip-text bg-gradient-to-tr via-white from-amber-900 to-amber-900'>
             {props.quote}
           </h3>
         </div>

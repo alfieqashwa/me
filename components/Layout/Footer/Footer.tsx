@@ -83,8 +83,8 @@ function Footer(props: Props): JSX.Element {
       </footer>
 
       {/* // * Desktop View */}
-      <footer className='hidden bg-[#171B20] -mx-36 pt-20 pb-16 md:block'>
-        <section className='z-10 flex items-center justify-between px-36'>
+      <footer className='hidden bg-[#171B20] md:mx:0 lg:-mx-36 pt-20 pb-16 md:block'>
+        <section className='z-10 flex items-center md:justify-center lg:justify-between md:px-0 lg:px-36'>
           <nav className='flex items-center justify-between space-x-14'>
             <DesktopLogo />
             <section className='flex items-center justify-between space-x-10'>
@@ -122,7 +122,7 @@ function Footer(props: Props): JSX.Element {
               </a>
             </section>
           </nav>
-          <ul className='flex items-center space-x-12'>
+          <ul className='flex items-center space-x-12 md:hidden lg:flex'>
             {props.menus.map((menu) => (
               <li key={menu}>
                 <h6 className='tracking-wider capitalize transition duration-300 ease-in-out text-amber-50 hover:opacity-80'>
@@ -146,7 +146,7 @@ function Footer(props: Props): JSX.Element {
             ))}
           </ul>
         </section>
-        <p className='text-sm tracking-widest text-center pt-28 text-amber-200'>
+        <p className='text-sm tracking-widest text-center pt-28 md:pt-20 lg:pt-28 text-amber-200'>
           © {new Date().getFullYear()} Alfie Qashwa
         </p>
       </footer>

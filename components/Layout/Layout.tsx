@@ -56,7 +56,7 @@ const Layout: React.FC<Props> = ({
   return (
     <div className='bg-[#101216]'>
       <Header pageTitle={pageTitle} />
-      <div className='relative w-full max-w-6xl md:mx-auto FuturaPT'>
+      <div className='relative w-full lg:max-w-6xl md:mx-auto FuturaPT'>
         {/* // * Start Mobile View */}
         <div className='w-full -pt-10 md:hidden'>
           <MobileNavigation menus={MENU_LIST} isOpen={isOpen} />
@@ -84,7 +84,7 @@ const Layout: React.FC<Props> = ({
         {/* // * Ends Mobile View */}
 
         {/* // * Start Desktop View */}
-        <div className='hidden md:block'>
+        <div className='hidden md:max-w-2xl lg:max-w-6xl md:mx-auto md:block'>
           <DesktopNavigation menus={MENU_LIST} />
           <main className='z-10'>{children}</main>
         </div>
