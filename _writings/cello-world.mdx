@@ -68,3 +68,28 @@ and...
 ```js
 const a = true
 ```
+
+### JSX Line-Highlighting
+
+```jsx {3,8-10}
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import theme from './theme'
+
+export default (props) => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
+```
+
+### JSX Comment-Out
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import theme from './theme'
+
+// there's only one export default on a file
+export default (props) => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
+```

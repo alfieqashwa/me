@@ -17,6 +17,7 @@ import PostTitle from 'components/PostTitle'
 import PostHeader from 'components/PostHeader'
 import PostBody from 'components/PostBody'
 import Tables from 'components/Tables'
+import Code from 'components/Code'
 
 type Props = {
   source: MDXRemoteSerializeResult
@@ -26,9 +27,8 @@ type Props = {
 const components = {
   a: CustomLink,
   table: Tables.Table,
-  // thead: Tables.Head,
-  // td: Tables.Cell,
-  // th: Tables.HeadCell,
+  code: Code.Prism,
+  pre: Code.Pre,
 
   TestComponent: dynamic(() => import('components/TestComponent')),
   HeroWithQuote: dynamic(() => import('components/HeroWithQuote')),
