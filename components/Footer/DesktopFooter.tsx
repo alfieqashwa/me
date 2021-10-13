@@ -15,7 +15,7 @@ export const DesktopFooter: React.FC<Props> = (props: Props): JSX.Element => {
   const router = useRouter()
   return (
     <footer className='hidden bg-[#171B20] pt-20 pb-16 md:block'>
-      <section className='z-10 flex items-center max-w-6xl mx-auto md:justify-center lg:justify-between md:px-0 '>
+      <section className='z-10 flex items-center mx-auto lg:max-w-5xl xl:max-w-6xl md:justify-center lg:justify-between md:px-0 '>
         <nav className='flex items-center justify-between space-x-14'>
           <DesktopLogo />
           <section className='flex items-center justify-between space-x-10'>

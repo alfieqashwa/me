@@ -83,7 +83,7 @@ const Layout: React.FC<Props> = ({
         {/* // * Ends Mobile View */}
 
         {/* // * Start Desktop View */}
-        <div className='hidden md:max-w-2xl lg:max-w-6xl md:mx-auto md:block'>
+        <div className='hidden md:max-w-2xl lg:max-w-5xl xl:max-w-6xl md:mx-auto md:block'>
           <DesktopNavigation menus={MENU_LIST} />
           <main className='z-10'>{children}</main>
         </div>
