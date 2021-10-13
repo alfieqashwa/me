@@ -1,14 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline'
 import { useAnimation, motion } from 'framer-motion'
 
 import { Header } from './Header'
 import DesktopNavigation from './Navigation/DesktopNavigation'
-import Footer from 'components/Layout/Footer'
+import { DesktopFooter, MobileFooter } from 'components/Footer'
 import MobileNavigation from './Navigation/MobileNavigation'
 import { MobileLogo } from './Logo'
 
 import { MENU_LIST } from 'utils/constants/menu-list'
+import { useRouter } from 'next/router'
 
 type Props = {
   pageTitle: string
@@ -24,6 +25,8 @@ const Layout: React.FC<Props> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  const router = useRouter()
 
   const animation = useAnimation()
 
@@ -90,8 +93,9 @@ const Layout: React.FC<Props> = ({
         </div>
         {/* // * Ends Desktop View */}
 
-        <Footer menus={MENU_LIST} />
+        <MobileFooter menus={MENU_LIST} />
       </div>
+      <DesktopFooter menus={MENU_LIST} />
     </div>
   )
 }
