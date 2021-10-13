@@ -3,13 +3,11 @@ import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline'
 import { useAnimation, motion } from 'framer-motion'
 
 import { Header } from './Header'
-import DesktopNavigation from './Navigation/DesktopNavigation'
+import { DesktopNavigation, MobileNavigation } from 'components/Navigation'
 import { DesktopFooter, MobileFooter } from 'components/Footer'
-import MobileNavigation from './Navigation/MobileNavigation'
 import { MobileLogo } from './Logo'
 
 import { MENU_LIST } from 'utils/constants/menu-list'
-import { useRouter } from 'next/router'
 
 type Props = {
   pageTitle: string
@@ -25,8 +23,6 @@ const Layout: React.FC<Props> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-
-  const router = useRouter()
 
   const animation = useAnimation()
 
