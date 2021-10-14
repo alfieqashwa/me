@@ -27,9 +27,7 @@ type Props = {
 const components = {
   a: CustomLink,
   table: Tables.Table,
-  code: Code.Prism,
-  pre: Code.Pre,
-
+  pre: Code,
   TestComponent: dynamic(() => import('components/TestComponent')),
   HeroWithQuote: dynamic(() => import('components/HeroWithQuote')),
   Head,
@@ -110,7 +108,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       frontMatter: data,
       slug,
     },
-    revalidate: 60,
   }
 }
 

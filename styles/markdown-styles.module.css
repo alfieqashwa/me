@@ -61,3 +61,7 @@
 .markdown td {
   @apply py-4 text-sm md:text-base text-left border-t-[1px] border-coolGray-600 bg-coolGray-800 text-coolGray-300;
 }
+
+/* .markdown span {
+  @apply text-fuchsia-300;
+} */

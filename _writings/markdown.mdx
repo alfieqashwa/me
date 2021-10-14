@@ -77,39 +77,19 @@ Some text to show that the reference links can follow later.
 
 ### Small Image
 
-<div className='Image__Small'>
-  <img src='./images/vaping.jpeg' title='Logo Title Text 1' alt='Small Image' />
-</div>
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
 ### Medium Image
 
-<div className='Image__Medium'>
-  <img
-    src='./images/vaping.jpeg'
-    title='Logo Title Text 1'
-    alt='Medium Image'
-  />
-</div>
-
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-### Large Image
-
-<div className='Image__Large'>
-  <img src='./images/vaping.jpeg' title='Logo Title Hero' alt='Large Image' />
-</div>
 
 ## Code and Syntax Highlighting
 
 ```javascript
-var s = 'JavaScript syntax highlighting'
+var s = 'JavaScript no-syntax highlighting'
 alert(s)
 ```
 
 ```javascript
-var s = 'JavaScript syntax highlighting'
+var s = 'JavaScript no-syntax highlighting'
 // comment out
 alert(s)
 ```
@@ -166,10 +146,11 @@ export default (props) => (
 import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
-
+// highlight-line
 export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
+// highlight-end
 ```
 
 ### JSX Line-Highlighting
@@ -205,7 +186,7 @@ I'm JS
 
 ### Golang Line Highlight
 
-```go {3,6}
+```go{3,6}
 package main
 
 import "fmt"

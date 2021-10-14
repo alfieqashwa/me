@@ -61,9 +61,9 @@ module.exports = {
             time: {
               color: theme('colors.amber.300'),
             },
-            span: {
-              color: theme('colors.amber.300'),
-            },
+            // span: {
+            //   color: theme('colors.amber.300'),
+            // },
             table: {
               thead: {
                 'th:first-child': {
