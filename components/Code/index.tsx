@@ -15,62 +15,64 @@ interface CodeBlockProps {
 }
 
 const RE = /{([\d,-]+)}/
-function calculateLinesToHighlight(meta: string | null) {
-  if (RE.test(meta as string)) {
-    const strlineNumbers = RE?.exec(meta as string)?.[1]
+function calculateLinesToHighlight(meta: string) {
+  if (RE.test(meta)) {
+    const strlineNumbers = RE?.exec(meta)?.[1]
     const lineNumbers = rangeParser(strlineNumbers as string)
+    console.log(lineNumbers)
     return (index: number) => lineNumbers.includes(index + 1)
   } else {
     return () => false
   }
 }
 
-const Code = ({ children }: CodeBlockProps, metaString: string) => {
-  const shouldHighlightLine = calculateLinesToHighlight(metaString)
+const Code: React.FC<CodeBlockProps> = ({
+  children,
+}: CodeBlockProps): JSX.Element => {
   // pull the className
   const language: Language | string =
-    children?.props?.className?.replace(/language-/, '') || ''
+    children.props?.className?.replace(/language-/, '') || ''
+
+  const metaString = children.props.className || ''
+  const shouldHighlightLine = calculateLinesToHighlight(metaString)
 
   return (
     <Highlight
-      Prism={defaultProps.Prism}
+      // Prism={defaultProps.Prism}
+      {...defaultProps}
       theme={theme}
-      code={children?.props?.children.trim()}
+      code={children.props?.children.trim()}
       language={language as Language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div data-language={language}>
-          <LangsIcon>
-            <div className='overflow-hidden'>
-              <Pre className={className} style={style}>
-                {tokens.map((line, index) => {
-                  return (
-                    <Line
-                      key={index}
-                      {...getLineProps({ line, key: index })}
-                      className={`${
-                        shouldHighlightLine(index) ? 'highlight-line' : ''
-                      }`}
-                    >
-                      <LineContent>
-                        <LineNo className='line-number-style'>
-                          {index + 1}
-                        </LineNo>
-                      </LineContent>
-                      {line.map((token, key) => (
-                        <span key={key} {...getTokenProps({ token, key })} />
-                      ))}
-                    </Line>
-                  )
-                })}
-              </Pre>
-            </div>
-          </LangsIcon>
-        </div>
+        <LangsIcon>
+          <Pre className={className} style={style}>
+            {tokens.map((line, i) => {
+              const lineProps = getLineProps({
+                line,
+                key: i,
+              })
+              if (shouldHighlightLine(i)) {
+                lineProps.className = `${lineProps.className} highlight-line`
+              }
+              return (
+                <Line key={i} {...lineProps}>
+                  <LineNo className='line-number-style'>{i + 1}</LineNo>
+                  <LineContent>
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </LineContent>
+                </Line>
+              )
+            })}
+          </Pre>
+        </LangsIcon>
       )}
     </Highlight>
   )
 }
+
 export default Code
 
 const Pre = styled.pre`
@@ -78,6 +80,11 @@ const Pre = styled.pre`
   margin: 1em 0;
   padding: 0.5em;
   overflow: scroll;
+
+  & .token-line {
+    line-height: 1.75em;
+    height: 1.75em;
+  }
 `
 
 const Line = styled.div`
